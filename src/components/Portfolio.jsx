@@ -39,16 +39,16 @@ export default function Portfolio() {
   const filtered = projects.filter((p) => (filter === 'All' ? true : p.category === filter));
 
   return (
-    <section id="portfolio" className="relative w-full bg-slate-950 py-20 text-white">
+    <section id="portfolio" className="relative w-full bg-white py-20 text-slate-900 dark:bg-slate-950 dark:text-white">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div>
             <h2 className="text-3xl font-bold sm:text-4xl">Featured Work</h2>
-            <p className="mt-3 max-w-2xl text-slate-300">A curated selection of recent projects and explorations.</p>
+            <p className="mt-3 max-w-2xl text-slate-600 dark:text-slate-300">A curated selection of recent projects and explorations.</p>
           </div>
           <a
             href="#all-projects"
-            className="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur transition-colors hover:bg-white/10"
+            className="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-900 shadow-sm backdrop-blur transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-white/90 dark:hover:bg-white/10"
           >
             View All Projects
           </a>
@@ -62,7 +62,7 @@ export default function Portfolio() {
               className={`rounded-full px-4 py-2 text-sm transition-colors ${
                 filter === c
                   ? 'bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white'
-                  : 'border border-white/10 bg-white/5 text-white/80 hover:bg-white/10'
+                  : 'border border-slate-200 bg-white text-slate-900 hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-white/80 dark:hover:bg-white/10'
               }`}
             >
               {c}
@@ -80,7 +80,7 @@ export default function Portfolio() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.4 }}
-                className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur"
+                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5"
               >
                 <div className="relative h-48 w-full overflow-hidden">
                   <img
@@ -88,11 +88,11 @@ export default function Portfolio() {
                     alt={p.title}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent dark:from-slate-950/60" />
                 </div>
                 <div className="p-5">
                   <h3 className="text-lg font-semibold">{p.title}</h3>
-                  <p className="mt-1 line-clamp-2 text-sm text-slate-300">{p.desc}</p>
+                  <p className="mt-1 line-clamp-2 text-sm text-slate-600 dark:text-slate-300">{p.desc}</p>
                   <div className="mt-4 flex items-center gap-3">
                     <a
                       href={p.demo}
@@ -100,7 +100,7 @@ export default function Portfolio() {
                     >
                       Live Demo <ExternalLink className="h-4 w-4" />
                     </a>
-                    <button className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-white/90 hover:bg-white/10">
+                    <button className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-900 hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-white/90 dark:hover:bg-white/10">
                       Details <Info className="h-4 w-4" />
                     </button>
                   </div>
