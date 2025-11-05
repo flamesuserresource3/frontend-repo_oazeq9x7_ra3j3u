@@ -90,11 +90,11 @@ export default function App() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                const form = e.currentTarget as HTMLFormElement;
+                const form = e.currentTarget;
                 const data = new FormData(form);
-                const name = data.get('name');
-                const email = data.get('email');
-                const message = data.get('message');
+                const name = data.get('name') || '';
+                const email = data.get('email') || '';
+                const message = data.get('message') || '';
                 const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
                 const body = encodeURIComponent(`${message}\n\nFrom: ${name} <${email}>`);
                 window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
